@@ -17,7 +17,7 @@ const ParticleBg = () => (
           enable: false,
         },
         move: {
-          direction: `right`,
+          direction: 'right',
           speed: 0.3,
         },
         size: {
@@ -45,32 +45,35 @@ const ParticleBg = () => (
 
 const articles = [
   {
-    title: `Velit reprehenderit culpa Lorem reprehenderit excepteur ipsum esse.`,
-    image: `/images/case-1.webp`,
-    alt: `Proident pariatur est.`,
+    title: `AI-Powered Solutions for Retail: Transforming Customer Experiences`,
+    image: `/images/case-1.webp`, // Replace with actual image URLs
+    alt: `AI-driven retail solutions for enhanced customer experience.`,
   },
   {
-    title: `Velit reprehenderit culpa Lorem reprehenderit ipsum esse.`,
-    image: `/images/case-2.webp`,
-    alt: `Proident pariatur est.`,
+    title: `Real-Time Logistics Tracking Systems: Streamlining Supply Chains`,
+    image: `/images/case-2.webp`, // Replace with actual image URLs
+    alt: `Logistics solutions that provide real-time tracking for efficient operations.`,
   },
   {
-    title: `Velit reprehenderit culpa Lorem reprehenderit excepteur esse.`,
-    image: `/images/case-3.webp`,
-    alt: `Proident pariatur est.`,
+    title: `Mobile Banking Application Development: FinTech Innovation`,
+    image: `/images/case-3.webp`, // Replace with actual image URLs
+    alt: `Innovative mobile banking solutions for modern financial services.`,
   },
 ];
 
 const CasesSection = () => (
   <section>
-    <div className={tw(`w-full min-h-screen bg-gray-900 relative`)}>
+    <div className={tw(`w-full min-h-screen bg-gray-900 relative`)} aria-label="Client Case Studies">
       <div className={tw(`absolute left-0 top-0 h-screen w-full overflow-hidden`)}>
         <ParticleBg />
       </div>
       <div className={tw(`max-w-7xl mx-4 lg:mx-auto pt-20 lg:pt-40`)}>
-        <h1 className={tw(`text-white text-4xl lg:text-7xl font-bold text-center`)}>What will you build?</h1>
+        <h1 className={tw(`text-white text-4xl lg:text-7xl font-bold text-center`)}>
+          Innovative Solutions: What Will You Build?
+        </h1>
         <p className={tw(`text-white text-gray-400 text-center text-xl mt-12`)}>
-          Don’t just take our word for it — see what leaders in digital are saying
+          Explore our client success stories and discover how our innovative software solutions 
+          drive digital transformation in various industries.
         </p>
         <div className={tw(`mx-auto pt-24`)}>
           <div className={tw(`w-full flex flex-wrap justify-around`)}>
@@ -92,7 +95,7 @@ const CasesSection = () => (
                   />
                 </div>
                 <div className={tw(`p-4 shadow-lg w-full mx-auto -mt-8 bg-white rounded-b z-30 relative`)}>
-                  <p className={tw(`uppercase text-sm text-gray-700 text-center pb-1`)}>Case study</p>
+                  <p className={tw(`uppercase text-sm text-gray-700 text-center pb-1`)}>Client Case Study</p>
                   <p className={tw(`text-gray-500 text-center pb-1 text-sm`)}>{article.title}</p>
                 </div>
               </div>
@@ -103,7 +106,7 @@ const CasesSection = () => (
                 text-indigo-400 cursor-pointer z-30 hover:text-indigo-600`,
               )}
             >
-              See all case studies
+              See all client success stories
               <Arrow className={tw(`h-6 w-6 fill-current ml-2`)} />
             </span>
           </div>
