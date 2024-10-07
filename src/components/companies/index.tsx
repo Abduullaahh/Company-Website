@@ -21,7 +21,7 @@ const TrustedCompanies = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 3000, // Adjust speed for smoother transition
+    speed: 6000, // Adjust speed for smoother transition
     slidesToShow: 4, // Adjust the number of logos shown at once
     slidesToScroll: 1,
     autoplay: true, // Enable autoplay

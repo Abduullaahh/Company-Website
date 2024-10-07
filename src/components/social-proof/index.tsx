@@ -47,30 +47,42 @@ const socialProofs = [
   },
 ];
 
-
 const SocialProof = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(100);
 
   const next = () => {
-    if (currentIndex + 1 < socialProofs.length) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    setFade(0); // Start fade out
+    setTimeout(() => {
+      if (currentIndex + 1 < socialProofs.length) {
+        setCurrentIndex(currentIndex + 1);
+      } else {
+        setCurrentIndex(0); // Loop back to the first item
+      }
+      setFade(100); // Fade in
+    }, 400); // Match the duration
   };
 
   const previous = () => {
-    if (currentIndex - 1 >= 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+    setFade(0); // Start fade out
+    setTimeout(() => {
+      if (currentIndex - 1 >= 0) {
+        setCurrentIndex(currentIndex - 1);
+      } else {
+        setCurrentIndex(socialProofs.length - 1); // Loop back to the last item
+      }
+      setFade(100); // Fade in
+    }, 400); // Match the duration
   };
 
   return (
-    <div className={tw(`container mx-auto my-8`)} aria-label="Client Testimonials" id='testmonials'>
+    <div className={tw(`container mx-auto my-8`)} aria-label="Client Testimonials">
       <div className={tw(`max-w-7xl mx-auto`)} role="document">
         <section>
           <figure>
             <div className={tw(`relative bg-white shadow-xl p-8 rounded-lg`)} role="blockquote">
               <Quote className={tw(`w-16 md:w-12 left-0 md:-left-2 absolute top-0 pl-4 md:pl-0 text-gray-300 ml-4`)} />
-              <div className={tw(`pt-20 px-6 md:px-0`)}>
+              <div className={tw(`pt-20 px-6 md:px-0`)} style={{ opacity: fade / 100, transition: 'opacity 0.5s ease-in-out' }}>
                 <p className={tw(`text-gray-600 text-base pb-6`)}>"{socialProofs[currentIndex].text}"</p>
                 <div className={tw(`flex items-center justify-between`)} aria-label="Client Information">
                   <div className={tw(`flex items-center pb-12`)}>

@@ -1,6 +1,7 @@
 import { tw } from 'twind';
 import { useState } from 'react';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
@@ -19,15 +20,15 @@ const links = [
   },
   {
     label: `Testimonials`,
-    href: `/#testmonials`,
+    href: `/#testimonials`,
   },
   {
     label: `About Us`,
-    href: `/aboutUs`,
+    href: `/about-us`,
   },
   {
-    label: `Blog`,
-    href: `/#blog`,
+    label: `Projects`,
+    href: `/#projects`,
   },
   {
     label: `Pricing`,
@@ -89,21 +90,21 @@ const MobileMenu = () => (
   <div className={tw(`md:hidden`)}>
     <div className={tw(`px-2 pt-2 pb-3 space-y-1 sm:px-3`)}>
       {links.map((link: Link) => (
-        <a href={link.href} className={tw(`text-gray-500 block px-3 py-2 text-base font-medium`)} key={link.label}>
+        <Link href={link.href} className={tw(`text-gray-500 block px-3 py-2 text-base font-medium`)} key={link.label}>
           {link.label}
-        </a>
+        </Link>
       ))}
     </div>
     <div className={tw(`pt-4 pb-3 border-t border-gray-400`)}>
       <div className={tw(`px-2 space-y-1`)}>
         {secondaryLinks.map((link: Link) => (
-          <a
+          <Link
             key={`mobile-${link.label}`}
             href={link.href}
             className={tw(`block px-3 py-2 text-base font-medium text-gray-500`)}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
     </div>
@@ -132,22 +133,22 @@ const Navigation = () => {
             <div className={tw(`hidden md:block`)}>
               <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
                 {links.map((link: Link) => (
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
                     className={tw(`text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium`)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <a href="/aboutUs#contact" style={{marginRight:'2rem', textDecoration:'none'}}>
+              <Link href="/aboutUs#contact" style={{marginRight:'2rem', textDecoration:'none'}}>
                 Contact
-              </a>
+              </Link>
               <Button primary>Get started</Button>
             </div>
           </div>

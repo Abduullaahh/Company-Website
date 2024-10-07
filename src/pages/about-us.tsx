@@ -14,9 +14,6 @@ const DynamicMap = dynamic(() => import('../components/Map'), { ssr: false });
 const AboutUs = () => {
   return (
     <Page>
-      <h1 className={tw(`bg-black text-white text-4xl lg:text-4xl font-bold text-center p-4`)} aria-label="DevSol Pricing Plans">
-          About DevSol
-      </h1>
       <About/>
       {/* <Team/> */}
       <div className="container mx-auto px-4 py-8 my-8">

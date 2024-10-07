@@ -2,9 +2,10 @@ import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import Header from '@/components/header';
 import VideoSection from '@/components/video-section';
+import Statistics from '@/components/statistics';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
-import BlogSection from '@/components/blogs-section';
+import Projects from '@/components/projects';
 import PricingTable from '@/components/pricing-table';
 import Footer from '@/components/footer';
 import TrustedCompanies from '@/components/companies';
@@ -39,12 +40,12 @@ export default function Home() {
       />
       <Header />
       <main>
-        <VideoSection />
+        <Statistics />
+        {/* <VideoSection /> */}
         <ListSection />
         <FeatureSection />
-        <BlogSection />
+        <Projects />
         <TrustedCompanies />
-        <PricingTable />
       </main>
       <Footer />
     </Page>
