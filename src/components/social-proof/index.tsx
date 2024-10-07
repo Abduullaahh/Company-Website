@@ -15,7 +15,38 @@ const socialProofs = [
     image: `/images/social-2.webp`, // Replace with actual image URLs
     text: `Working with DevSol has been a game-changer for us. Their innovative approach to digital transformation helped streamline our processes and improve our customer engagement significantly. I highly recommend their services!`,
   },
+  {
+    name: `Emma Williams`,
+    company: `Smart Solutions Inc.`,
+    image: `/images/social-1.webp`, // Replace with actual image URLs
+    text: `Our collaboration with DevSol has been nothing short of amazing. Their expert team helped us optimize our workflow, leading to a 30% reduction in project turnaround times. We truly value their insights and support!`,
+  },
+  {
+    name: `Daniel Brown`,
+    company: `NextGen Tech`,
+    image: `/images/social-2.webp`, // Replace with actual image URLs
+    text: `DevSol's cutting-edge software has allowed us to scale our business effectively. Their commitment to excellence and understanding of our industry needs was pivotal in achieving our growth targets. We are grateful for their partnership!`,
+  },
+  {
+    name: `Olivia Martinez`,
+    company: `HealthTech Solutions`,
+    image: `/images/social-1.webp`, // Replace with actual image URLs
+    text: `The tailored solutions provided by DevSol improved our operational efficiency by over 50%. Their responsive customer service and expert guidance have made a significant impact on our productivity. Highly recommended!`,
+  },
+  {
+    name: `James Taylor`,
+    company: `Creative Agency`,
+    image: `/images/social-2.webp`, // Replace with actual image URLs
+    text: `Thanks to DevSol, we have successfully digitized our services. Their innovative technology and strategic insights have helped us engage better with our clients, resulting in a remarkable increase in customer satisfaction.`,
+  },
+  {
+    name: `Sophia Anderson`,
+    company: `Finance Hub Ltd.`,
+    image: `/images/social-1.webp`, // Replace with actual image URLs
+    text: `DevSol has been instrumental in revolutionizing our financial operations. Their bespoke solutions not only enhanced our reporting capabilities but also improved data accuracy across the board. A true partner in our journey!`,
+  },
 ];
+
 
 const SocialProof = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,12 +64,12 @@ const SocialProof = () => {
   };
 
   return (
-    <div className={tw(`container mx-auto my-8`)} aria-label="Client Testimonials">
+    <div className={tw(`container mx-auto my-8`)} aria-label="Client Testimonials" id='testmonials'>
       <div className={tw(`max-w-7xl mx-auto`)} role="document">
         <section>
           <figure>
-            <div className={tw(`relative bg-white shadow-lg p-6 rounded-lg`)} role="blockquote">
-              <Quote className={tw(`w-16 md:w-12 left-0 md:-left-2 absolute top-0 pl-4 md:pl-0 text-gray-300`)} />
+            <div className={tw(`relative bg-white shadow-xl p-8 rounded-lg`)} role="blockquote">
+              <Quote className={tw(`w-16 md:w-12 left-0 md:-left-2 absolute top-0 pl-4 md:pl-0 text-gray-300 ml-4`)} />
               <div className={tw(`pt-20 px-6 md:px-0`)}>
                 <p className={tw(`text-gray-600 text-base pb-6`)}>"{socialProofs[currentIndex].text}"</p>
                 <div className={tw(`flex items-center justify-between`)} aria-label="Client Information">

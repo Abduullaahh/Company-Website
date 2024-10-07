@@ -15,30 +15,30 @@ type Link = {
 const links = [
   {
     label: `Features`,
-    href: `/`,
+    href: `/#features`,
   },
   {
     label: `Testimonials`,
-    href: `/`,
+    href: `/#testmonials`,
   },
   {
-    label: `Pricing`,
-    href: `/`,
+    label: `About Us`,
+    href: `/aboutUs`,
   },
   {
     label: `Blog`,
-    href: `/`,
+    href: `/#blog`,
+  },
+  {
+    label: `Pricing`,
+    href: `/#pricing`,
   },
 ];
 
 const secondaryLinks = [
   {
-    label: `Contact sales`,
-    href: `/`,
-  },
-  {
-    label: `Log in`,
-    href: `/`,
+    label: `Contact`,
+    href: `/contact`,
   },
   {
     label: `Get Started`,
@@ -120,12 +120,14 @@ const Navigation = () => {
         <div className={tw(`flex items-center justify-between h-24`)}>
           <div className={tw(`flex items-center`)}>
             <div className={tw(`flex-shrink-0`)}>
-              <img
-                className={tw(``)}
-                src="logo.svg"
-                alt="DevSol - Expert Web Development & Digital Solutions"
-                style={{ height: '5rem', width: '9.375rem' }}
-              />
+              <a href="/" className={tw(``)}>
+                <img
+                  className={tw(``)}
+                  src="logo.svg"
+                  alt="DevSol - Expert Web Development & Digital Solutions"
+                  style={{ height: `5rem`, width: `9.375rem` }}
+                />
+              </a>
             </div>
             <div className={tw(`hidden md:block`)}>
               <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
@@ -143,8 +145,9 @@ const Navigation = () => {
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Button modifier="border-0 mr-2">Contact sales</Button>
-              <Button modifier="border-0 mr-2">Log in</Button>
+              <a href="/aboutUs#contact" style={{marginRight:'2rem', textDecoration:'none'}}>
+                Contact
+              </a>
               <Button primary>Get started</Button>
             </div>
           </div>
