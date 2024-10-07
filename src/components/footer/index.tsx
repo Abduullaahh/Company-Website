@@ -23,7 +23,7 @@ const Footer = () => (
           className={tw(`mr-4`)}
           src="logo.svg"
           alt="DevSol - Expert Web Development & Digital Solutions"
-          style={{ height: '5rem', width: '9.375rem' }}
+          style={{ height: `5rem`, width: `9.375rem` }}
         />
       </div>
       <div className={tw(`w-full lg:w-1/2`)}>
