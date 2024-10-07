@@ -13,8 +13,29 @@ export default function Home() {
   return (
     <Page>
       <NextSeo
-        title="STARTD - Template"
-        description="A TypeScript/Next.js theme that includes everything you need to build amazing landing page!"
+        title="DevSol - Expert Web Development & Digital Solutions"
+        description="DevSol offers top-notch web solutions including development, design, and digital marketing. Build your dream project with our expert team using the latest technologies."
+        canonical="https://www.devsol.com"
+        // openGraph={{
+        //   url: 'https://www.devsol.com',
+        //   title: 'DevSol - Expert Web Development & Digital Solutions',
+        //   description: 'DevSol offers top-notch web solutions including development, design, and digital marketing. Build your dream project with our expert team using the latest technologies.',
+        //   images: [
+        //     {
+        //       url: 'https://www.devsol.com/images/og-image.jpg',
+        //       width: 800,
+        //       height: 600,
+        //       alt: 'DevSol - Premier Web Solutions Provider',
+        //       type: 'image/jpeg',
+        //     },
+        //   ],
+        //   site_name: 'DevSol',
+        // }}
+        // twitter={{
+        //   handle: '@devsol',
+        //   site: '@devsol',
+        //   cardType: 'summary_large_image',
+        // }}
       />
       <Header />
       <main>

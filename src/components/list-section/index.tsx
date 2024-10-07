@@ -3,22 +3,19 @@ import FeatureSvg from '@/constants/svg/features.svg';
 
 const listItems = [
   {
-    title: `Designers`,
-    description: `Officia et fugiat mollit qui. Dolor elit aliqua voluptate ipsum
-    excepteur cillum consequat consectetur duis magna qui eu consequat occaecat.
-    Deserunt nisi sit.`,
+    title: `Creative Designers`,
+    description: `Transform your ideas into stunning visuals. Our UX/UI design team 
+    crafts experiences that engage users and elevate brands in the digital landscape.`,
   },
   {
-    title: `Developers`,
-    description: `Pariatur consectetur laboris exercitation duis laboris.
-    Commodo duis fugiat magna fugiat et ut anim elit. Tempor aute ex qui
-    tempor tempor.`,
+    title: `Expert Developers`,
+    description: `Leverage our web development services to build robust, scalable solutions. 
+    Our agile development process ensures timely delivery and quality assurance.`,
   },
   {
-    title: `Product owners`,
-    description: `Ullamco consectetur ipsum eiusmod nisi adipisicing sint anim
-    dolore aute excepteur. Voluptate ea ullamco sunt eu elit qui aliquip.
-    Adipisicing.`,
+    title: `Dedicated Product Owners`,
+    description: `Guiding your project from conception to launch, our product owners ensure 
+    your digital transformation aligns with business objectives for maximum impact.`,
   },
 ];
 

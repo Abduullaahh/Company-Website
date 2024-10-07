@@ -4,22 +4,16 @@ import Quote from '@/constants/svg/quote.svg';
 
 const socialProofs = [
   {
-    name: `John Doe`,
-    company: `Alphabet Inc.`,
-    image: `/images/social-1.webp`,
-    text: `Commodo Lorem consequat ea consectetur pariatur proident excepteur.
-    Pariatur eiusmod minim minim ipsum tempor aute excepteur minim eu nisi laboris.
-    Duis sunt labore eu eu cupidatat labore commodo id aliquip.`,
+    name: `Sarah Johnson`,
+    company: `Tech Innovations LLC`,
+    image: `/images/social-1.webp`, // Replace with actual image URLs
+    text: `DevSol's software solutions transformed our operations, enabling us to increase efficiency by 40%. Their team was responsive and dedicated, ensuring our needs were met every step of the way. We couldn't be happier with the results!`,
   },
   {
-    name: `Jack Doe`,
-    company: `Amazon.com, Inc.`,
-    image: `/images/social-2.webp`,
-    text: `Anim labore ut amet cupidatat pariatur pariatur labore ad est.
-    Fugiat eiusmod dolore aliquip aute duis esse excepteur amet.
-    Sit cupidatat ipsum culpa nisi esse ipsum culpa in consectetur.
-    Enim incididunt do sunt ex do. Proident duis nulla minim sunt irure est
-    magna nostrud Lorem consectetur irure.`,
+    name: `Michael Smith`,
+    company: `Green Energy Corp.`,
+    image: `/images/social-2.webp`, // Replace with actual image URLs
+    text: `Working with DevSol has been a game-changer for us. Their innovative approach to digital transformation helped streamline our processes and improve our customer engagement significantly. I highly recommend their services!`,
   },
 ];
 
@@ -39,17 +33,17 @@ const SocialProof = () => {
   };
 
   return (
-    <div className={tw(`container mx-auto my-8`)}>
-      <div className={tw(`max-w-7xl mx-auto`)}>
+    <div className={tw(`container mx-auto my-8`)} aria-label="Client Testimonials">
+      <div className={tw(`max-w-7xl mx-auto`)} role="document">
         <section>
           <figure>
-            <div className={tw(`relative bg-white`)}>
+            <div className={tw(`relative bg-white shadow-lg p-6 rounded-lg`)} role="blockquote">
               <Quote className={tw(`w-16 md:w-12 left-0 md:-left-2 absolute top-0 pl-4 md:pl-0 text-gray-300`)} />
               <div className={tw(`pt-20 px-6 md:px-0`)}>
-                <p className={tw(`text-gray-600 text-base pb-6`)}>{socialProofs[currentIndex].text}</p>
-                <div className={tw(`flex items-center justify-between`)}>
+                <p className={tw(`text-gray-600 text-base pb-6`)}>"{socialProofs[currentIndex].text}"</p>
+                <div className={tw(`flex items-center justify-between`)} aria-label="Client Information">
                   <div className={tw(`flex items-center pb-12`)}>
-                    <div className={tw(`h-12 w-12`)}>
+                    <div className={tw(`h-12 w-12`)} role="img" aria-label={socialProofs[currentIndex].name}>
                       <img
                         src={socialProofs[currentIndex].image}
                         alt={socialProofs[currentIndex].name}
