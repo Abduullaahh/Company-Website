@@ -2,8 +2,8 @@ import { tw } from 'twind';
 
 const AboutUs = () => {
   return (
-    <section className={tw(`py-5 bg-white`)} style={{marginBottom:"10%", marginTop:"5%"}} style={{ backgroundImage: 'linear-gradient(to bottom, #014783, white, white, white)'}} id="about-us">
-        <h1 className={tw(`text-white text-4xl lg:text-4xl font-bold text-center p-4`)} aria-label="DevSol Pricing Plans">
+    <section className={tw(`py-5 bg-white`)} style={{marginBottom:"10%", marginTop:"5%"}} style={{ backgroundImage: 'linear-gradient(to bottom, #66A2C3, #99C4DD, white)'}} id="about-us">
+        <h1 className={tw(`text-black text-4xl lg:text-4xl font-bold text-center p-4`)} aria-label="DevSol Pricing Plans">
             About DevSol
         </h1>
       <div className={tw(`max-w-7xl mx-auto px-4 lg:px-0 flex items-center`)}>

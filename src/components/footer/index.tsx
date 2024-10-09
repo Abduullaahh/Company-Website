@@ -16,24 +16,24 @@ const resourceLinks = [
 ];
 
 const Footer = () => (
-  <footer className={tw(`bg-white border-t border-gray-400 pt-14 pb-16`)}>
+  <footer className={tw(`border-t border-gray-400 pt-14 pb-16`)} style={{ backgroundColor: `#014C8B` }}>
     <div className={tw(`max-w-7xl mx-auto text-gray-400 px-8 lg:px-0 flex flex-wrap`)}>
       <div className={tw(`mb-14 flex items-center w-full`)}>
         <img
           className={tw(`mr-4`)}
-          src="logo.svg"
+          src="/logo.svg"
           alt="DevSol - Expert Web Development & Digital Solutions"
           style={{ height: `5rem`, width: `9.375rem` }}
         />
       </div>
-      <div className={tw(`w-full lg:w-1/2`)}>
+      <div className={tw(`w-full lg:w-1/2 text-white`)}>
         <ul className={tw(`text-lg font-light flex flex-wrap w-full`)}>
           <li className={tw(`w-1/2 md:w-1/3 lg:w-1/3`)}>
             <div>
-              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>Product</h4>
+              <h4 className={tw(`text-base font-bold mb-1`)}>Product</h4>
               <ul>
                 {productLinks.map((link) => (
-                  <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={link}>
+                  <li className={tw(`text-sm font-medium leading-6`)} key={link}>
                     <a href="/">{link}</a>
                   </li>
                 ))}
@@ -42,10 +42,10 @@ const Footer = () => (
           </li>
           <li className={tw(`w-1/2 md:w-1/3 lg:w-1/3`)}>
             <div>
-              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>Resources</h4>
+              <h4 className={tw(`text-base font-bold mb-1`)}>Resources</h4>
               <ul>
                 {resourceLinks.map((link) => (
-                  <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={link}>
+                  <li className={tw(`text-sm font-medium leading-6`)} key={link}>
                     <a href="/">{link}</a>
                   </li>
                 ))}
@@ -54,10 +54,10 @@ const Footer = () => (
           </li>
           <li className={tw(`w-1/2 md:w-1/3 lg:w-1/3`)}>
             <div>
-              <h4 className={tw(`text-gray-900 text-base font-bold mb-1`)}>About Us</h4>
+              <h4 className={tw(`text-base font-bold mb-1`)}>About Us</h4>
               <ul>
                 {aboutLinks.map((link) => (
-                  <li className={tw(`text-gray-800 text-sm font-medium leading-6`)} key={link}>
+                  <li className={tw(`text-sm font-medium leading-6`)} key={link}>
                     <a href="/">{link}</a>
                   </li>
                 ))}
@@ -73,7 +73,7 @@ const Footer = () => (
             <input
               aria-label="email address"
               type="text"
-              className={tw(`border border-gray-300 bg-gray-100 min-w-0 w-full rounded text-gray-800 py-2 px-3 mr-2`)}
+              className={tw(`border border-gray-300 bg-gray-100 min-w-0 w-full rounded py-2 px-3 mr-2`)}
               placeholder="Enter your email"
             />
             <Button>Subscribe</Button>

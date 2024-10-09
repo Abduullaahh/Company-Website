@@ -9,6 +9,7 @@ import Projects from '@/components/projects';
 import PricingTable from '@/components/pricing-table';
 import Footer from '@/components/footer';
 import TrustedCompanies from '@/components/companies';
+import Services from '@/components/services';
 
 export default function Home() {
   return (
@@ -41,8 +42,10 @@ export default function Home() {
       <Header />
       <main>
         <Statistics />
+        <Services/>
         {/* <VideoSection /> */}
         <ListSection />
+        <PricingTable />
         <FeatureSection />
         <Projects />
         <TrustedCompanies />

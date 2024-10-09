@@ -2,18 +2,20 @@ import { tw } from 'twind';
 import { useState } from 'react';
 import Button from '@/components/button';
 import Link from 'next/link';
+import DropdownMenu from '@/components/navigation/dropdown';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
   showMenu: boolean;
 }
 
-type Link = {
+type LinkType = {
   label: string;
   href: string;
+  dropdown?: LinkType[];
 };
 
-const links = [
+const links: LinkType[] = [
   {
     label: `Features`,
     href: `/#features`,
@@ -25,6 +27,10 @@ const links = [
   {
     label: `About Us`,
     href: `/about-us`,
+    dropdown: [
+      { label: `Life at DevSol`, href: `/about-us/life` },
+      { label: `Blogs`, href: `/blogs` },
+    ],
   },
   {
     label: `Projects`,
@@ -34,9 +40,13 @@ const links = [
     label: `Pricing`,
     href: `/#pricing`,
   },
+  {
+    label: `Contact Us`,
+    href: `/about-us#contact`,
+  },
 ];
 
-const secondaryLinks = [
+const secondaryLinks: LinkType[] = [
   {
     label: `Contact`,
     href: `/contact`,
@@ -86,18 +96,44 @@ const MenuButton = ({ toggleMenu, showMenu }: IMenuButton) => (
   </button>
 );
 
-const MobileMenu = () => (
+const MobileMenu = ({ toggleDropdown, showDropdown }) => (
   <div className={tw(`md:hidden`)}>
     <div className={tw(`px-2 pt-2 pb-3 space-y-1 sm:px-3`)}>
-      {links.map((link: Link) => (
-        <Link href={link.href} className={tw(`text-gray-500 block px-3 py-2 text-base font-medium`)} key={link.label}>
-          {link.label}
-        </Link>
+      {links.map((link: LinkType) => (
+        <div key={link.label} className={tw(`relative`)}>
+          <Link href={link.href} className={tw(`text-gray-500 block px-3 py-2 text-base font-medium`)}>
+            {link.label}
+          </Link>
+          {link.dropdown && (
+            <div>
+              <button
+                onClick={toggleDropdown}
+                className={tw(`flex justify-between w-full text-left px-3 py-2 text-base font-medium text-gray-500`)}
+              >
+                More
+                <svg
+                  className={tw(`h-5 w-5`)}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+              {showDropdown && <DropdownMenu links={link.dropdown} />}
+            </div>
+          )}
+        </div>
       ))}
     </div>
     <div className={tw(`pt-4 pb-3 border-t border-gray-400`)}>
       <div className={tw(`px-2 space-y-1`)}>
-        {secondaryLinks.map((link: Link) => (
+        {secondaryLinks.map((link: LinkType) => (
           <Link
             key={`mobile-${link.label}`}
             href={link.href}
@@ -113,43 +149,43 @@ const MobileMenu = () => (
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
+  const toggleDropdown = () => setShowDropdown(!showDropdown);
 
   return (
-    <nav className={tw(`bg-white`)}>
+    <nav className={tw(`bg-white`)} style={{ boxShadow: `0 4px 6px rgb(243, 244, 246)` }}>
       <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`)}>
         <div className={tw(`flex items-center justify-between h-24`)}>
           <div className={tw(`flex items-center`)}>
             <div className={tw(`flex-shrink-0`)}>
-              <a href="/" className={tw(``)}>
+              <Link href="/" className={tw(``)}>
                 <img
                   className={tw(``)}
-                  src="logo.svg"
+                  src="/logo.svg"
                   alt="DevSol - Expert Web Development & Digital Solutions"
                   style={{ height: `5rem`, width: `9.375rem` }}
                 />
-              </a>
+              </Link>
             </div>
-            <div className={tw(`hidden md:block`)}>
+            <div className={tw(`hidden md:block ml-36 relative`)}>
               <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
-                {links.map((link: Link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={tw(`text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium`)}
-                  >
-                    {link.label}
-                  </Link>
+                {links.map((link) => (
+                  <div key={link.label} className={tw(`relative group`)}>
+                    <Link
+                      href={link.href}
+                      className={tw(`text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium`)}
+                    >
+                      {link.label}
+                    </Link>
+                    {link.dropdown && (
+                      <div className={tw(`absolute left-0 z-10 hidden group-hover:block`)}>
+                        <DropdownMenu links={link.dropdown} />
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className={tw(`hidden md:block`)}>
-            <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Link href="/aboutUs#contact" style={{marginRight:'2rem', textDecoration:'none'}}>
-                Contact
-              </Link>
-              <Button primary>Get started</Button>
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>
@@ -157,7 +193,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-      {showMenu ? <MobileMenu /> : null}
+      {showMenu && <MobileMenu toggleDropdown={toggleDropdown} showDropdown={showDropdown} />}
     </nav>
   );
 };

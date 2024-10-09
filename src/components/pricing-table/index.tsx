@@ -17,11 +17,15 @@ const PricingTable = () => (
   <section
     className={tw(`bg-gradient-to-b from-gray-100 to-white shadow-inner pt-12`)}
     aria-label="Pricing Table for DevSol Services"
-    id='pricing'
+    id="pricing"
   >
     <div className={tw(`relative max-w-7xl mx-auto mb-24`)}>
       <header className={tw(`py-8 px-6 md:px-0 lg:flex-shrink-1`)}>
-        <h1 className={tw(`text-4xl lg:text-5xl font-bold text-gray-800 mb-12`)} aria-label="DevSol Pricing Plans">
+        <h1
+          className={tw(`text-4xl lg:text-5xl font-bold text-gray-800 mb-12`)}
+          style={{ color: `#014A88` }}
+          aria-label="DevSol Pricing Plans"
+        >
           Unlock Your Business Potential with DevSol
         </h1>
         <p className={tw(`mt-6 text-base leading-6 text-gray-500`)}>
@@ -33,9 +37,8 @@ const PricingTable = () => (
         <div className={tw(`py-8 px-6 md:px-0 lg:flex-shrink-1`)}>
           <div className={tw(`flex items-center`)}>
             <h2
-              className={tw(
-                `flex-shrink-0 pr-4 text-sm leading-5 tracking-wider font-semibold uppercase text-indigo-600`,
-              )}
+              className={tw(`flex-shrink-0 pr-4 text-sm leading-5 tracking-wider font-semibold uppercase`)}
+              style={{ color: `#0271BF` }}
             >
               What’s Included in Our Software Development Plans
             </h2>
