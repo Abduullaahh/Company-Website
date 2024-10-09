@@ -1,6 +1,5 @@
 import { tw } from 'twind';
 import { useState } from 'react';
-import Button from '@/components/button';
 import Link from 'next/link';
 import DropdownMenu from '@/components/navigation/dropdown';
 
@@ -29,7 +28,7 @@ const links: LinkType[] = [
     href: `/about-us`,
     dropdown: [
       { label: `Life at DevSol`, href: `/life-at-devsol` },
-      { label: `Blogs`, href: `/blogs` },
+      { label: `Blogs`, href: `/blogs/blogs` },
     ],
   },
   {

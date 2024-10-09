@@ -1,5 +1,4 @@
 import { tw, css } from 'twind/css';
-import Button from '@/components/button';
 import Carousel from '@/components/header/carousel';
 
 const headerStyle = css`
@@ -24,12 +23,6 @@ const Header = () => (
             business goals.
           </p>
         </div>
-        {/* Uncomment if you want buttons */}
-        {/* <div className={tw(`mt-10 flex items-center w-full`)}> */}
-        {/*   <Button primary>Start Your Project</Button> */}
-        {/*   <span className={tw(`mx-2`)}>or</span> */}
-        {/*   <Button>Contact Our Team</Button> */}
-        {/* </div> */}
       </div>
 
       {/* Right Side - Carousel */}

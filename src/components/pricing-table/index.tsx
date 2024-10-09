@@ -1,6 +1,5 @@
 import { tw } from 'twind';
 import Check from '@/constants/svg/check.svg';
-import Button from '@/components/button';
 
 const features = [
   `24/7 Customer Support: Our dedicated team is always available to assist you with any queries.`,
@@ -59,9 +58,6 @@ const PricingTable = () => (
               );
             })}
           </ul>
-          <Button primary modifier="mt-6 w-50" aria-label="Contact DevSol sales">
-            Contact Sales
-          </Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from '@/components/page';
-import { tw } from 'twind';
+import { NextSeo } from 'next-seo';
 import Footer from '@/components/footer';
 import Team from '@/components/team';
 import About from '@/components/about';
@@ -9,30 +9,22 @@ import ContactUs from '@/components/contact';
 import 'leaflet/dist/leaflet.css';
 import dynamic from 'next/dynamic';
 
-const DynamicMap = dynamic(() => import('../components/Map'), { ssr: false });
+const DynamicMap = dynamic(() => import(`../components/Map`), { ssr: false });
 
-const AboutUs = () => {
-  return (
-    <Page>
-      <About/>
-      {/* <Team/> */}
-      <div className="container mx-auto px-4 py-8 my-8">
-        <Card />
-        
-        {/* <div className="mt-12 mb-12 text-center">
-          <h2 className={tw(`text-2xl font-semibold text-gray-900 mb-2`)}>
-            Ready to enhance your online presence?
-          </h2>
-          <Button primary modifier="mt-6 w-50" aria-label="Start Your Project">
-            Start Your Project
-          </Button>
-        </div> */}
-      </div>
-      <DynamicMap />
-      <ContactUs />
-      <Footer />
-    </Page>
-  );
-};
+const AboutUs = () => (
+  <Page>
+    <NextSeo
+      title="About Us - DevSol | Expert Software Development & Digital Solutions"
+      description="Discover DevSol, your trusted partner in web development and digital solutions. Our dedicated team specializes in custom web applications, innovative design, and strategic digital marketing to help your business thrive in the online landscape."
+      canonical="https://www.devsol.com/life-at-devsol"
+    />
+    <About />
+    {/* <Team/> */}
+    <Card />
+    <DynamicMap />
+    <ContactUs />
+    <Footer />
+  </Page>
+);
 
 export default AboutUs;

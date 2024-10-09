@@ -37,8 +37,13 @@ const Stories = () => (
                 >
                     {/* Text Holder */}
                     <div
-                        className={tw`col-12 col-lg-6 flex`}
-                        style={{ padding: `0 5%`, width: `45%`, justifyContent: `center`, alignItems: `center` }}
+                        className={tw`col-12 lg:col-6 flex`}
+                        style={{
+                            padding: `0 5%`,
+                            width: `40%`,
+                            justifyContent: `center`,
+                            alignItems: `center`,
+                        }}
                     >
                         <div className={tw`text-holder`}>
                             <h2
@@ -50,10 +55,19 @@ const Stories = () => (
                             <p className={tw`mb-0`}>{item.description}</p>
                         </div>
                     </div>
-                    {/* Image Holder */}
-                    <div className={tw`col-12 col-lg-6 flex justify-content-between`} style={{ padding: `0 5%`, width: `55%` }}>
-                        <div className={tw`img-holder`}>
-                            <img src={item.image} className={tw`img-fluid`} alt={item.alt} />
+                    {/* Image Holder - Hidden on small screens */}
+                    <div className={tw`hidden lg:flex col-12 lg:col-6`} style={{ padding: `0 5%`, width: `55%` }}>
+                        <div className={tw`img-holder`} style={{ overflow: `hidden` }}>
+                            <img
+                                src={item.image}
+                                className={tw`img-fluid`}
+                                alt={item.alt}
+                                style={{
+                                    transition: `transform 0.3s ease`,
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.transform = `scale(1.1)`)}
+                                onMouseLeave={(e) => (e.currentTarget.style.transform = `scale(1)`)}
+                            />
                         </div>
                     </div>
                 </div>

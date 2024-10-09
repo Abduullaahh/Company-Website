@@ -1,17 +1,30 @@
 import Page from '@/components/page';
 import Footer from '@/components/footer';
+import { useState, useEffect } from 'react';
 import ProjectCards from '@/components/all-projects';
-import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import ServicesUsed from '@/components/all-projects/services-used';
 import BenefitsGained from '@/components/all-projects/benefits';
 import Features from '@/components/all-projects/features';
 import TestimonialCard from '@/components/all-projects/testimonial';
 
 const ProjectDetail = () => {
-  const projectData = JSON.parse(localStorage.getItem('projectData'));
+  const [projectData, setProjectData] = useState(null);
+
+  useEffect(() => {
+    const data = localStorage.getItem('projectData');
+    if (data) {
+      setProjectData(JSON.parse(data));
+    }
+  }, []);
 
   return (
     <Page>
+      <NextSeo
+        title={`DevSol Project - ${projectData?.title}`}
+        description="Explore the DevSol Projects for expert insights, tips, and trends in web development, digital marketing, and design. Stay updated with our latest articles and enhance your project with cutting-edge technologies."
+        canonical="https://www.devsol.com/blog"
+      />
       <main>
         <div className="flex flex-col items-center">
           {projectData ? (

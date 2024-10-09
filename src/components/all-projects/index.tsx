@@ -1,6 +1,4 @@
 import { tw } from 'twind';
-import Link from 'next/link';
-import Arrow from '@/constants/svg/arrow.svg';
 import { useRouter } from 'next/router';
 
 // Define the projects (reusing the 3 images for 9 projects)

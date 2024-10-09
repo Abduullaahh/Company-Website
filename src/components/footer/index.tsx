@@ -1,5 +1,4 @@
 import { tw } from 'twind';
-import Button from '@/components/button';
 
 const productLinks = [`Features`, `Customers`, `Platform`, `Pricing`, `Enterprise`, `What's new?`];
 const aboutLinks = [`About Us`, `Careers`, `Leadership`, `Blog`, `Events`, `Press`];
@@ -21,7 +20,7 @@ const Footer = () => (
       <div className={tw(`mb-14 flex items-center w-full`)}>
         <img
           className={tw(`mr-4`)}
-          src="/logo.svg"
+          src="/logof.svg"
           alt="DevSol - Expert Web Development & Digital Solutions"
           style={{ height: `5rem`, width: `9.375rem` }}
         />
@@ -67,8 +66,8 @@ const Footer = () => (
         </ul>
       </div>
       <div className={tw(`w-full lg:w-1/2 mt-12 lg:mt-0`)}>
-        <div className={tw(`border border-gray-400 rounded py-5 px-4`)}>
-          <h4 className={tw(`font-mono text-sm uppercase text-gray-500 mb-3`)}>Subscribe our newsletter</h4>
+        <div className={tw(`py-5 px-4`)}>
+          <h4 className={tw(`font-mono text-sm uppercase text-white mb-3`)}>Subscribe our newsletter</h4>
           <div className={tw(`flex w-full`)}>
             <input
               aria-label="email address"
@@ -76,7 +75,18 @@ const Footer = () => (
               className={tw(`border border-gray-300 bg-gray-100 min-w-0 w-full rounded py-2 px-3 mr-2`)}
               placeholder="Enter your email"
             />
-            <Button>Subscribe</Button>
+            <button
+              className={tw`px-6 py-2 text-white rounded-md transition duration-300`}
+              onMouseEnter={(e) => (
+                (e.currentTarget.style.backgroundColor = `white`), (e.currentTarget.style.color = `#003B6A`)
+              )}
+              onMouseLeave={(e) => (
+                (e.currentTarget.style.backgroundColor = `#003B6A`), (e.currentTarget.style.color = `white`)
+              )}
+              style={{ backgroundColor: `#003B6A` }}
+            >
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
