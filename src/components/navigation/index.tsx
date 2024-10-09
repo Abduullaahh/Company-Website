@@ -28,7 +28,7 @@ const links: LinkType[] = [
     label: `About Us`,
     href: `/about-us`,
     dropdown: [
-      { label: `Life at DevSol`, href: `/about-us/life` },
+      { label: `Life at DevSol`, href: `/life-at-devsol` },
       { label: `Blogs`, href: `/blogs` },
     ],
   },
