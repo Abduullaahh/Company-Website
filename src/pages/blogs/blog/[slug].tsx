@@ -22,9 +22,9 @@ const Blog = () => {
                 canonical="https://www.devsol.com/blog"
             />
             {blogData ? (
-                <div style={{ width: '70%', margin: '0 auto' }}>
+                <div style={{ width: '60%', margin: '0 auto' }}>
                     {/* Blog Title */}
-                    <h1 className={tw`text-4xl lg:text-6xl font-light text-left pt-16 pb-8`} style={{ color: '#014C8B' }}>{blogData.title}</h1>
+                    <h1 className={tw`text-4xl lg:text-4xl font-bold text-left pt-16 pb-8`} style={{ color: '#014C8B' }}>{blogData.title}</h1>
 
                     {/* Blog Image */}
                     <img
@@ -34,7 +34,7 @@ const Blog = () => {
                     />
 
                     {/* Blog Content */}
-                    <div className="text-lg leading-relaxed pb-16 pt-8">
+                    <div className="text-md leading-relaxed pb-16 pt-8">
                         {blogData.content}
                     </div>
                 </div>

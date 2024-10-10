@@ -40,7 +40,8 @@ const ListSection = () => (
                   <span
                     className={tw(`flex w-16 h-16 mx-auto items-center
                       justify-center text-2xl font-bold rounded-full
-                      bg-blue-50 text-blue-500`)}
+                      bg-blue-50`)}
+                    style={{ color: '#014C8B', backgroundColor: 'rgb(212 222 230)' }}
                   >
                     {index + 1}
                   </span>

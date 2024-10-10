@@ -4,7 +4,7 @@ import { tw } from 'twind';
 const data = [
     {
         title: `One team, one goal`,
-        description: `Working at Systems Limited defines a community of people with a shared purpose. We believe in the power of a nurturing environment to enhance the quality of life for everyone. We are purpose-driven to push the boundaries of what is possible with IT & management solutions; our people make this possible as they are the strength behind our every success. The joint synergy fueled by our people fosters innovation while helping us to continually improve, deliver, and succeed as one team.`,
+        description: `Working at DevSol defines a community of people with a shared purpose. We believe in the power of a nurturing environment to enhance the quality of life for everyone. We are purpose-driven to push the boundaries of what is possible with IT & management solutions; our people make this possible as they are the strength behind our every success. The joint synergy fueled by our people fosters innovation while helping us to continually improve, deliver, and succeed as one team.`,
         image: `/images/One team, one goal.jpg`,
         alt: `One team, one goal`,
     },

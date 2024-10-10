@@ -23,7 +23,7 @@ const Landing = () => (
                     <div className={tw`services-hero services-hero--mobilefull`}>
                         <div className={tw`services-hero-display`}>
                             <h6 />
-                            <h1 className={tw`text-fillwhite text-5xl md:text-8xl font-thin mb-8`}>Working at DevSol</h1>
+                            <h1 className={tw`text-fillwhite text-5xl md:text-8xl font-light mb-8`}>Working at DevSol</h1>
                         </div>
 
                         <Link href="/about-us/#contact">
